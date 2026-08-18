@@ -78,12 +78,16 @@ h1, h2, h3, h4 {
 
 /* === Header & Navigation === */
 .site-header {
-  background: rgba(8, 11, 16, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 11, 16, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-accent);
-  padding: 1.5rem 0 1rem;
+  padding: 1rem 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: var(--transition-smooth);
 }
 
 .header-inner {
@@ -819,12 +823,31 @@ section {
   .header-inner {
     flex-direction: column;
     text-align: center;
-    gap: 1.25rem;
+    gap: 1rem;
   }
   .clientele-box {
-    margin: 1rem auto 0;
+    margin: 0.75rem auto 0;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
+  }
+  .main-nav {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: auto;
+    max-width: 95%;
+    gap: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(16, 28, 54, 0.45);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0.75rem;
+    border-top: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .main-nav::-webkit-scrollbar {
+    display: none;
   }
   .banners {
     grid-template-columns: 1fr;
@@ -856,25 +879,51 @@ section {
     flex-direction: column;
     text-align: center;
     padding: 2rem 1.5rem;
+    gap: 1.25rem;
+  }
+  .business-card .card-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    object-fit: cover;
   }
   .clientele-logos img {
     width: 100px;
     height: 65px;
   }
+  .expertise-item, .why-bullets li {
+    background: rgba(8, 11, 16, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    padding: 2.25rem 1.75rem;
+  }
+  .expertise-item h3 {
+    font-size: 1.4rem;
+  }
+  .why-bullets li {
+    padding: 1.5rem 1.5rem;
+  }
+  .bullet-content {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 576px) {
   .division-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
   }
   .company-name {
-    font-size: 1.75rem;
+    font-size: 1.45rem;
     letter-spacing: 1px;
   }
   .main-nav {
-    flex-wrap: wrap;
-    gap: 0.8rem 1.2rem;
+    gap: 1.15rem;
+    padding: 0.4rem 1rem;
+    max-width: 100%;
   }
 }
 
